@@ -41,3 +41,16 @@
 - has_many :groups, through: :groups_users
 - has_many :messages
 
+
+## groups_users table
+
+|Field|Type|Key|Options|
+|---|:---:|:---:|---|
+|id|integer|pk|null: false, unique: true, index: true|
+|group_id|integer|fk|null: false|
+|user_id|integer|fk|null: false|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
