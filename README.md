@@ -6,7 +6,6 @@
 
 |Field|Type|Key|Options|
 |---|:---:|:---:|---|
-|id|integer|pk|null: false, unique: true, index: true|
 |body|text||null: false|
 |image|string||null: false|
 |group_id|integer|fk|null: false|
@@ -21,7 +20,6 @@
 
 |Field|Type|Key|Options|
 |---|:---:|:---:|---|
-|id|integer|pk|null: false, unique: true, index: true|
 |name|string||null: false|
 
 ### Association
@@ -33,7 +31,6 @@
 
 |Field|Type|Key|Options|
 |---|:---:|:---:|---|
-|id|integer|pk|null: false, unique: true, index: true|
 |name|string||null: false|
 |email|string||null: false|
 
@@ -46,7 +43,6 @@
 
 |Field|Type|Key|Options|
 |---|:---:|:---:|---|
-|id|integer|pk|null: false, unique: true, index: true|
 |group_id|integer|fk|null: false|
 |user_id|integer|fk|null: false|
 
