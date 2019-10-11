@@ -6,8 +6,8 @@
 
 |Field|Type|Key|Options|
 |---|:---:|:---:|---|
-|body|text||null: false|
-|image|string||null: false|
+|body|text|||
+|image|string|||
 |group_id|integer|fk|null: false|
 |user_id|integer|fk|null: false|
 
