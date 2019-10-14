@@ -1,2 +1,10 @@
 @import "./reset";
 @import "./variable";
+
+// Importing partials for layout parts
+@import "./modules/chat-header";
+@import "./modules/chat-content";
+@import "./modules/chat-input-form";
+@import "./modules/sidebar-header";
+@import "./modules/sidebar-content";
+
