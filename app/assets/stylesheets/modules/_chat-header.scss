@@ -14,9 +14,12 @@
     &--group-name {
       margin-top:           35px;
       font-size:            20px;
-      color:                $cs-mid-grey;
+      color:                $cs-heavy-grey;
     }
     &--member-list {
+      margin-top:           15px;
+      font-size:            12px;
+      color:                $cs-mid-grey;
       &__member-name {
       }
     }
