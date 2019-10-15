@@ -1,2 +1,5 @@
 .chat-input-form-container
+  %form{:class => "chat-input-form-container__form", :action => '#', :method => 'post'}
+  %input{:class => "chat-input-form-container__form--input", :name =>"message", :type => "input", :placeholder => "type a message"}
+  %input{:class => "chat-input-form-container__form--btn", :type => "submit", :value => "Send"}
 
