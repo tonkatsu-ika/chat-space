@@ -5,4 +5,36 @@
   bottom:                 0;
   right:                  0;
   background-color:       #dddddd;
+
+  padding:                20px 40px;
+
+  &__form {
+
+    display:              flex;
+    width:                100%;
+
+    &--input {
+
+      padding:            0 10px;
+      height:             50px;
+      width:              100%;
+
+      font-size:          16px;
+      color:              $cs-light-heavy-grey;
+
+    }
+
+    &--btn {
+      
+      @include btn($font-color:$cs-white, $font-size:16px, $height:50px, $border-color:$cs-light-blue, $background-color:$cs-light-blue, $border-width:0);
+
+      margin-left:        15px;
+      width:              100px;
+      padding:            0 30px;
+      cursor:             pointer;
+
+    }
+ 
+  }
+
 }
