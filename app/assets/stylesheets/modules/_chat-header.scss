@@ -33,12 +33,9 @@
     padding-right:          40px;
     margin-top:             28px;
     &--btn {
-      height:               40px;
-      line-height:          40px;
+      @include  btn($height: 40px, $font-size: 16px, $font-color: $cs-light-blue, $border-color: $cs-light-blue);
+
       padding:              0 20px;
-      font-size:            16px;
-      color:                $cs-light-blue;
-      border:               1px solid $cs-light-blue;
     }
   }
 }
