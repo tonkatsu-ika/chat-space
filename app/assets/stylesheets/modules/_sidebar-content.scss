@@ -5,4 +5,19 @@
   height:               $sidebar-content-height;
   padding-top:          $sidebar-header-height;
   background-color:     #2f3e51;
+
+  .chat-groups {
+
+    .chat-group {
+
+      &__group-name {
+      }
+
+      &__latest-message {
+      }
+    
+    }
+
+  }
+
 }
