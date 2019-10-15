@@ -1,11 +1,10 @@
 .header-container {
   position:                 fixed;
-  top:                      0;
+  top:                      $suceeded-in-group-creation-height;
   right:                    0;
   width:                    $chat-width;
   height:                   $chat-header-height;
   border-bottom:            solid 1px #eeeeee;
-
 
   &__left {
 

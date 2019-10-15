@@ -1,6 +1,6 @@
 .chat-content-container {
   position:                 fixed;
-  top:                      $chat-header-height;
+  top:                      $suceeded-in-group-creation-height + $chat-header-height;
   right:                    0;
   width:                    $chat-width;
   height:                   $chat-content-height;
