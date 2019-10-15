@@ -5,6 +5,11 @@
 // Importing mixins
 @import "./mixin";
 
+// 共通設定
+* {
+  box-sizing:     border-box;
+}
+
 // Importing partials for layout parts
 @import "./modules/suceeded-in-group-creation";
 @import "./modules/chat-header";
