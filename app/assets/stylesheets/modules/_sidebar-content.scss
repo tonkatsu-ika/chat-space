@@ -3,17 +3,30 @@
   bottom:               0;
   width:                $sidebar-width;
   height:               $sidebar-content-height;
-  padding-top:          $sidebar-header-height;
+  margin-top:           $sidebar-header-height;
   background-color:     #2f3e51;
 
   .chat-groups {
 
+    padding:            20px 20px 40px 20px;
+
     .chat-group {
 
       &__group-name {
+
+        margin-bottom:  5px;
+        font-weight:    bold;
+        font-size:      15px;
+        color:          $cs-white;
+
       }
 
       &__latest-message {
+
+        font-weight:    bold;
+        font-size:      11px;
+        color:          $cs-white;
+
       }
     
     }
