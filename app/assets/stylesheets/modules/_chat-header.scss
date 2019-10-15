@@ -11,6 +11,9 @@
   &__left {
 
     &--group-name {
+      margin-top:           35px;
+      font-size:            20px;
+      color:                $cs-mid-grey;
     }
     &--member-list {
       &__member-name {
