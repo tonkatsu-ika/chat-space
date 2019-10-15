@@ -5,6 +5,7 @@
 @import "./mixin";
 
 // Importing partials for layout parts
+@import "./modules/suceeded-in-group-creation";
 @import "./modules/chat-header";
 @import "./modules/chat-content";
 @import "./modules/chat-input-form";
