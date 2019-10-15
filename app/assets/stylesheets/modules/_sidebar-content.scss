@@ -1,4 +1,6 @@
 .sidebar-content-container {
+  position:             fixed;
+  bottom:               0;
   width:                $sidebar-width;
   height:               $sidebar-content-height;
   padding-top:          $sidebar-header-height;
