@@ -33,9 +33,10 @@
     padding-right:          40px;
     margin-top:             28px;
     &--btn {
+      display:              block;
       @include  btn($height: 40px, $font-size: 16px, $font-color: $cs-light-blue, $border-color: $cs-light-blue);
-
       padding:              0 20px;
+      text-decoration:      none;
     }
   }
 }
