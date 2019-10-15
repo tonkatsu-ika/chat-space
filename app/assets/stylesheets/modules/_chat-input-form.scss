@@ -9,24 +9,56 @@
   padding:                20px 40px;
 
   &__form {
+    
 
     display:              flex;
     width:                100%;
 
-    &--input {
+    .input-form {
 
-      padding:            0 10px;
-      height:             50px;
+      display:            flex;
+      position:           relative;
       width:              100%;
 
-      font-size:          16px;
-      color:              $cs-light-heavy-grey;
+      &__text {
+  
+        padding:          0 10px;
+        height:           $input-form-height;
+        width:            100%; 
+        font-size:        16px;
+        color:            $cs-light-heavy-grey;
+        border:           none;
+  
+      }
+
+      &__image {
+
+        position:         absolute;
+        top:              0;
+        right:            10px;
+        cursor:           pointer;
+        background-color: $cs-white;
+
+        .fa-image {
+
+          font-size:      20.8px;
+          line-height:    $input-form-height;
+
+        }
+
+        #image-uploader {
+            
+            display:      none;
+
+        }
+        
+      }
 
     }
 
     &--btn {
       
-      @include btn($font-color:$cs-white, $font-size:16px, $height:50px, $border-color:$cs-light-blue, $background-color:$cs-light-blue, $border-width:0);
+      @include btn($font-color:$cs-white, $font-size:16px, $height:$input-form-height, $border-color:$cs-light-blue, $background-color:$cs-light-blue, $border-width:0);
 
       margin-left:        15px;
       width:              100px;
