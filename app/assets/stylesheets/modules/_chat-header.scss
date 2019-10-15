@@ -6,9 +6,21 @@
   height:                   $chat-header-height;
   border-bottom:            solid 1px #eeeeee;
 
-  padding: 0 40px;
+  padding:                  0 40px;
 
   &__left {
 
+    &--group-name {
+    }
+    &--member-list {
+      &__member-name {
+      }
+    }
+
+  }
+
+  &__right {
+    &--btn {
+    }
   }
 }
