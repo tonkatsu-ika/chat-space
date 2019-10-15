@@ -1,4 +1,5 @@
 .sidebar-header-container {
+
   position:             fixed;
   top:                  $suceeded-in-group-creation-height;
   left:                 0;
@@ -9,12 +10,14 @@
   padding:              0 20px;
 
   &__user-name {
+
     display:            inline-block;
     float:              left;
     line-height:        $header-height;
     font-weight:        bold;
     color:              $cs-white;
     font-size:          16px;
+
   }
 
   &__menu-list {
@@ -27,12 +30,17 @@
     font-weight:          bold;
 
     .fa-edit {
+
       color:              $cs-white;
+
     }
     
     .fa-cog {
+
       color:              $cs-white;
+
     }
+
   }
 
 }
