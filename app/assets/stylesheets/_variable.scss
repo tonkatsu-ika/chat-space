@@ -11,7 +11,7 @@ $cs-white:        #ffffff;
 $sidebar-width:               300px;
 $chat-width:                  calc(100vw - #{$sidebar-width});
 
-$header-height:               90px;
+$header-height:               100px;
 $sidebar-header-height:       $header-height;
 $sidebar-content-height:      calc(100vh - #{$sidebar-header-height});
 $chat-header-height:          $header-height;
