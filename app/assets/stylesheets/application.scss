@@ -1,6 +1,8 @@
 @import "./reset";
 @import "./variable";
 
+// Importing mixins
+@import "./mixin";
 
 // Importing partials for layout parts
 @import "./modules/chat-header";
