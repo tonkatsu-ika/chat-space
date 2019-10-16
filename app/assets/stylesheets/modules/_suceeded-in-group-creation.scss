@@ -10,4 +10,9 @@
   font-size:          16px;
   text-align:         center;
 
+  .flash {
+    &__alert {
+      background-color: $cs-alert-orange;
+    }
+  }
 }
