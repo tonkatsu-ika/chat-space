@@ -1,0 +1,24 @@
+// cs: an abbreviation of 'chat-space'  
+
+// defining color scheme
+$cs-light-blue:         #38aef0;
+$cs-light-heavy-grey:   #434a54;
+$cs-heavy-grey:         #333333;
+$cs-mid-grey:           #999999; 
+$cs-white:              #ffffff;
+
+// variables for layout
+$sidebar-width:               300px;
+$chat-width:                  calc(100vw - #{$sidebar-width});
+
+$header-height:               100px;
+$suceeded-in-group-creation-height: 24px;
+$sidebar-header-height:       $header-height;
+$sidebar-content-height:      calc(100vh - #{$suceeded-in-group-creation-height} - #{$sidebar-header-height});
+$chat-header-height:          $header-height;
+$chat-input-form-height:      90px;
+$chat-content-height:         calc(100vh - #{$chat-header-height} - #{$chat-input-form-height});
+
+$input-form-height:           50px;
+
+

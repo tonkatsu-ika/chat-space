@@ -1,0 +1,41 @@
+.header-container {
+  position:                 fixed;
+  top:                      $suceeded-in-group-creation-height;
+  right:                    0;
+  width:                    $chat-width;
+  height:                   $chat-header-height;
+  border-bottom:            solid 1px #eeeeee;
+
+  &__left {
+
+    padding-left:           40px;
+    display:                inline-block;
+
+    &--group-name {
+      margin-top:           35px;
+      font-size:            20px;
+      color:                $cs-heavy-grey;
+    }
+    &--member-list {
+      margin-top:           15px;
+      font-size:            12px;
+      color:                $cs-mid-grey;
+      &__member-name {
+      }
+    }
+
+  }
+
+  &__right {
+    display:                inline-block;
+    float:                  right;
+    padding-right:          40px;
+    margin-top:             28px;
+    &--btn {
+      display:              block;
+      @include  btn($height: 40px, $font-size: 16px, $font-color: $cs-light-blue, $border-color: $cs-light-blue);
+      padding:              0 20px;
+      text-decoration:      none;
+    }
+  }
+}

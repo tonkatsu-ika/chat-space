@@ -1,0 +1,57 @@
+.chat-content-container {
+  position:                 fixed;
+  top:                      $suceeded-in-group-creation-height + $chat-header-height;
+  right:                    0;
+  width:                    $chat-width;
+  height:                   $chat-content-height;
+  background-color:         #fafafa;  
+
+  .chat-messages {
+  
+    padding:                46px 40px 0;
+
+    .chat-message {
+    
+      margin-bottom:        40px;
+
+      $base-font-size:      16px;
+
+      &__upper-content {
+
+
+        &__user-name {
+  
+          float:            left;
+          margin-right:     10px;
+          line-height:      $base-font-size;
+  
+          font-weight:      bold;
+          font-size:        $base-font-size;
+          color:            $cs-light-heavy-grey;
+  
+        }
+  
+        &__date {
+  
+          line-height:      $base-font-size;
+  
+          font-size:        12px;
+          color:            $cs-mid-grey;
+  
+        }
+
+      }
+
+      &__message {
+
+        padding-top:        10px;
+        font-size:          14px;
+        color:              $cs-light-heavy-grey;
+        
+      }
+
+    }
+
+  }
+
+}
