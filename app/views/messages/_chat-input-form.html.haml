@@ -1,9 +1,9 @@
 .chat-input-form-container
-  %form{:class => "chat-input-form-container__form", :action => '#', :method => 'post'}
+  %form{class: "chat-input-form-container__form", action: '#', method: 'post'}
     .input-form
-      %input{:class => "input-form__text", :name =>"message", :type => "input", :placeholder => "type a message"}
-      %label{:class => "input-form__image", :for => "image-uploader"}
-        %i{:class => "fa fa-image"}
-        %input{:id => "image-uploader", :name => "image", :type => "file"}
-    %input{:class => "chat-input-form-container__form--btn", :type => "submit", :value => "Send"}
+      %input{class: "input-form__text", name: "message", type: "input", placeholder: "type a message"}
+      %label{class: "input-form__image", for: "image-uploader"}
+        %i{class: "fa fa-image"}
+        %input{id: "image-uploader", name: "image", type: "file"}
+    %input{class: "chat-input-form-container__form--btn", type: "submit", value: "Send"}
 
