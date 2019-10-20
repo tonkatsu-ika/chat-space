@@ -11,13 +11,15 @@
   text-align:         center;
 
   .flash {
+    
     color:            $cs-white;
     text-align:       center;
 
     &__notice {
+      background-color: $cs-light-blue;
     }
     &__alert {
-      background-color: red;
+      background-color: $cs-alert-orange;
     }
 
   }
