@@ -7,4 +7,4 @@
       %span.header-container__left--member-list__member-name
         seo neko
   .header-container__right
-    =link_to 'Edit', '#', {class: "header-container__right--btn"}
+    =link_to 'Edit', "/groups/#{@group.id}/edit", {class: "header-container__right--btn"}
