@@ -1,7 +1,11 @@
 .sidebar-content-container
   .chat-groups
-    =link_to "#", {class: "chat-group"} do
-      %p.chat-group__group-name
-        sample
-      %p.chat-group__latest-message
-        Good by world!
+    - current_user.groups.each do |group|
+      = link_to "#", {class: "chat-group"} do
+        %p.chat-group__group-name
+          = group.name
+        %p.chat-group__latest-message
+          - if group.messages.length == 0
+            まだメッセージはありません
+          - else
+            = group.messages.order(id: "DESC")
