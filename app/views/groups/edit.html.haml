@@ -7,6 +7,7 @@
         %ul
           %li エラーです
     .chat-group-form__field
+    = form_for @group do |f|
       .chat-group-form__field--left
         %label.chat-group-form__label{for: "chat_group_name"} グループ名
       .chat-group-form__field--right
@@ -17,6 +18,7 @@
       .chat-group-form__field--left
         %label.chat-group-form__label チャットメンバー
       .chat-group-form__field--right
+        = f.collection_check_boxes :users, @group.user.all, :id
         / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
         / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときにも使用します
     .chat-group-form__field
