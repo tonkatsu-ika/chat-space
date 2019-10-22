@@ -1,9 +1,8 @@
 .chat-input-form-container
-  %form{class: "chat-input-form-container__form", action: '#', method: 'post'}
+  = form_for [@group, @message], url: "messages", html: {class: "chat-input-form-container__form"} do |f|
     .input-form
-      %input{class: "input-form__text", name: "message", type: "input", placeholder: "type a message"}
-      %label{class: "input-form__image", for: "image-uploader"}
-        %i{class: "fa fa-image"}
-        %input{id: "image-uploader", name: "image", type: "file"}
-    %input{class: "chat-input-form-container__form--btn", type: "submit", value: "Send"}
-
+      = f.text_field :content, class: "input-form__text", placeholder: "type a message"
+      = f.label :image, class: "input-form__image", for: "image-uploader" do
+        = fa_icon 'picture-o', {class: "fa fa-image"}
+        = f.file_field :image, id: "image-uploader", name: "image"
+    = f.submit "Send", class: "chat-input-form-container__form--btn"
