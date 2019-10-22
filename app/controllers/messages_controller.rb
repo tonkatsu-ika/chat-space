@@ -4,10 +4,10 @@ class MessagesController < ApplicationController
     @message = Message.new
     @group = Group.find(params[:group_id])
     @messages = @group.messages.includes(:user)
+    @groups = current_user.groups.includes(:messages)
   end
 
   def create
-    binding.pry
     @group = Group.find(params[:group_id])
     @message = @group.messages.new(message_params)
    

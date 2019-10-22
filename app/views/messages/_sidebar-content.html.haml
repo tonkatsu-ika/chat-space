@@ -1,12 +1,14 @@
 .sidebar-content-container
   .chat-groups
-    - current_user.groups.each do |group|
+    - @groups.each do |group|
       = link_to group_messages_path(group.id) do
         .chat-group
           %p.chat-group__group-name
             = group.name
           %p.chat-group__latest-message
-            - if group.messages.length == 0
-              まだメッセージはありません
+            - latest_message_object = group.messages.order(id: "DESC").limit(1)[0]
+            - if latest_message_object
+              = latest_message_object.message
             - else
-              = group.messages.all
+              まだメッセージはありません
+
