@@ -6,7 +6,7 @@
 
 |Field|Type|Key|Options|
 |---|:---:|:---:|---|
-|body|text|||
+|content|text|||
 |image|string|||
 |group_id|integer|fk|null: false|
 |user_id|integer|fk|null: false|
