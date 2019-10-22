@@ -1,10 +1,11 @@
 .header-container
   .header-container__left
     %h2.header-container__left--group-name
-      sample
+      = @group.name
     %p.header-container__left--member-list
       Members:
       %span.header-container__left--member-list__member-name
-        seo neko
+      - @group.users.each do |user|
+        = user.name
   .header-container__right
-    =link_to 'Edit', "#", {class: "header-container__right--btn"}
+    =link_to 'Edit', edit_group_path(@group.id), {class: "header-container__right--btn"}
