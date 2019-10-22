@@ -6,9 +6,5 @@
           %p.chat-group__group-name
             = group.name
           %p.chat-group__latest-message
-            - latest_message_object = group.messages.order(id: "DESC").limit(1)[0]
-            - if latest_message_object
-              = latest_message_object
-            - else
-              まだメッセージはありません
+            = group.show_last_message
 
