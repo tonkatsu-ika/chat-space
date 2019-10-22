@@ -1,11 +1,12 @@
 .chat-content-container
   .chat-messages
-  - @messages.each do |message|
-    .chat-message
-      .chat-massage__upper-content
-        %p.chat-message__upper-content__user-name
-          seo
-        %p.chat-message__upper-content__date
-          2016/09/21 06:16:55
-      %p.chat-message__message
-        Hello world!
+    - @messages.each do |message|
+      .chat-message
+        .chat-massage__upper-content
+          %p.chat-message__upper-content__user-name
+            = message.user.name
+          %p.chat-message__upper-content__date
+            = message.created_at
+        %p.chat-message__message
+          = message.content
+          = message.image
