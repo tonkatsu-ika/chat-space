@@ -8,4 +8,4 @@
           - if group.messages.length == 0
             まだメッセージはありません
           - else
-            = group.messages.order(id: "DESC").limit(1)
+            = group.messages.all

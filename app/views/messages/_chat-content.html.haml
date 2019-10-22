@@ -7,6 +7,5 @@
             = message.user.name
           %p.chat-message__upper-content__date
             = message.created_at
-        %p.chat-message__message
-          = message.content
-          = message.image
+        %p.chat-message__message #{message.content}
+        = image_tag "#{message.image.url}"

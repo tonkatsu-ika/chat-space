@@ -2,7 +2,7 @@
   = form_for [@group, @message], url: "messages", html: {class: "chat-input-form-container__form"} do |f|
     .input-form
       = f.text_field :content, class: "input-form__text", placeholder: "type a message"
-      = f.label :image, class: "input-form__image", for: "image-uploader" do
-        = fa_icon 'picture-o', {class: "fa fa-image"}
-        = f.file_field :image, id: "image-uploader", name: "image"
+      = f.label :image, class: "input-form__image" do
+        = fa_icon 'picture-o', class: "fa fa-image"
+        = f.file_field :image, class: "hidden"
     = f.submit "Send", class: "chat-input-form-container__form--btn"
