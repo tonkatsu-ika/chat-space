@@ -1,11 +1,12 @@
 .sidebar-content-container
   .chat-groups
     - current_user.groups.each do |group|
-      = link_to group_messages_path(group.id), {class: "chat-group"} do
-        %p.chat-group__group-name
-          = group.name
-        %p.chat-group__latest-message
-          - if group.messages.length == 0
-            まだメッセージはありません
-          - else
-            = group.messages.all
+      = link_to group_messages_path(group.id) do
+        .chat-group
+          %p.chat-group__group-name
+            = group.name
+          %p.chat-group__latest-message
+            - if group.messages.length == 0
+              まだメッセージはありません
+            - else
+              = group.messages.all
