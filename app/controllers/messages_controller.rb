@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
   end
 
   def create
+    binding.pry
     @group = Group.find(params[:group_id])
     @message = @group.messages.new(message_params)
    
