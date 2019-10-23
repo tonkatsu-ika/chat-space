@@ -40,6 +40,11 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   gem 'pry-byebug'
+
+  # RSpec関連
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails_controller_testing'
 end
 
 group :development do
