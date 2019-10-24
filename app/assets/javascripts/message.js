@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   
   $('#new_message').on('submit', function(e) {
-    e.preventDefault;
+    e.preventDefault();
     let formData = new FormData(this);
     let url = window.location.href
     $.ajax({
@@ -12,6 +12,10 @@ $(document).ready(function() {
       dataType: 'json',
       processData: false,
       contentType: false
+    })
+    .done(function(data){
+      console.log(data);
+      debugger
     })
   });
 });
