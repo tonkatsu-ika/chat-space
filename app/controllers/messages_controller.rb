@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
       redirect_to group_messages_path
     else
       # 失敗時
-      render index
+      render :index
     end
   end
 
