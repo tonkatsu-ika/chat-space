@@ -5,7 +5,6 @@ $(document).ready(function() {
     e.preventDefault;
     let formData = new FormData(this);
     let url = window.location.href
-
     $.ajax({
       url: url,
       method: 'POST',
