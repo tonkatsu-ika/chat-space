@@ -1,10 +1,11 @@
 $(document).ready(function() {
 
   
-  $('#new_message').on('submit', function() {
+  $('#new_message').on('submit', function(e) {
+    e.preventDefault;
     let formData = new FormData(this);
     let url = window.location.href
-    console.log(url);
+
     $.ajax({
       url: url,
       method: 'POST',
