@@ -1,7 +1,8 @@
 document.addEventListener('turbolinks:load', function() {
 
   $('#user-search-field').on('keyup', function() {
-    console.log('OK');
+    let input = $(this).val();
+    console.log(input);
   });
 
 });
