@@ -12,10 +12,7 @@ class MessagesController < ApplicationController
     @message = @group.messages.new(message_params)
 
     if @message.save
-      respond_to do |format|
-        format.html { redirect_to group_messages_path }
-        format.json
-      end
+      respond_to :json
     else
       # 失敗時
       render :index
