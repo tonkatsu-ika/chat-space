@@ -41,8 +41,9 @@ $(document).ready(function() {
 
       $('.chat-content-container').animate({ 
         scrollTop: $('.chat-messages').height()
-      });
+      }, 100);
 
+      $('.chat-input-form-container__form--btn').removeAttr('disabled');
     });
   });
 });
