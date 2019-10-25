@@ -44,6 +44,9 @@ $(document).ready(function() {
       }, 100);
 
       $('.chat-input-form-container__form--btn').removeAttr('disabled');
-    });
+    })
+    .fail(function() {
+      alert('エラーが発生しました');
+    })
   });
 });
