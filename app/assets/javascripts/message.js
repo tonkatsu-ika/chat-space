@@ -2,10 +2,8 @@ document.addEventListener('turbolinks:load', function() {
 
   function buildHTML(data) {
 
-    let imgTag = '';
-    if (data.image.url !== null) { 
-      imgTag = `<img src=${data.image.url} >`;
-    }
+    let imgTag;
+    data.image.url !== null?imgTag = `<img src=${data.image.url} >`:imgTag = '';
     
     let createdAtObj = new Date(data.created_at);
     let createdAtStr = `${createdAtObj.getFullYear()}/${createdAtObj.getMonth() + 1}/${createdAtObj.getDate()} ${createdAtObj.toLocaleTimeString()}`
