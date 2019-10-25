@@ -9,6 +9,8 @@ $(document).ready(function() {
       imgTag = `<img src=${data.image.url} >`;
     }
     
+    let createdAtObj = new Date(data.created_at);
+    let createdAtStr = `${createdAtObj.getFullYear()}/${createdAtObj.getMonth() + 1}/${createdAtObj.getDate()} ${createdAtObj.toLocaleTimeString()}`
 
     let html = `<div class="chat-message">
                   <div class="chat-massage__upper-content">
@@ -16,7 +18,7 @@ $(document).ready(function() {
                       ${data.user_name}
                     </p>
                     <p class="chat-message__upper-content__date">
-                      ${data.created_at}
+                      ${createdAtStr}
                     </p>
                   </div>
                   <p class="chat-message__message">
