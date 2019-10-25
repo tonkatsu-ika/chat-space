@@ -14,7 +14,6 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to :json
     else
-      # 失敗時
       render :index
     end
   end

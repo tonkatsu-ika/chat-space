@@ -52,7 +52,8 @@ document.addEventListener('turbolinks:load', function() {
       let html = buildHTML(data);
 
       $('.chat-messages').append(html);
-      $('#message_content').val('');
+
+      $('#new_message')[0].reset();
 
       $('.chat-content-container').animate({ 
         scrollTop: $('.chat-messages').height()
