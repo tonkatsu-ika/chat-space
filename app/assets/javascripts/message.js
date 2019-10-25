@@ -2,8 +2,6 @@ $(document).ready(function() {
 
   function buildHTML(data) {
 
-    console.log(data.image.url);
-
     let imgTag = '';
     if (data.image.url !== null) { 
       imgTag = `<img src=${data.image.url} >`;
