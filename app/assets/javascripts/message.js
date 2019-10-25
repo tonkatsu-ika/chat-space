@@ -1,6 +1,15 @@
 $(document).ready(function() {
 
   function buildHTML(data) {
+
+    console.log(data.image.url);
+
+    let imgTag = '';
+    if (data.image.url !== null) { 
+      imgTag = `<img src=${data.image.url} >`;
+    }
+    
+
     let html = `<div class="chat-message">
                   <div class="chat-massage__upper-content">
                     <p class="chat-message__upper-content__user-name">
@@ -13,7 +22,7 @@ $(document).ready(function() {
                   <p class="chat-message__message">
                     ${data.content}
                   </p>
-                  <img src=${data.image}>
+                  ${imgTag}
                 </div>`;
     
     return html;
