@@ -6,6 +6,8 @@
   height:                   $chat-content-height;
   background-color:         #fafafa;  
 
+  overflow:                 scroll;
+
   .chat-messages {
   
     padding:                46px 40px 0;

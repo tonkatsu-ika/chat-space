@@ -35,8 +35,14 @@ $(document).ready(function() {
     })
     .done(function(data){
       let html = buildHTML(data);
+
       $('.chat-messages').append(html);
       $('#message_content').val('');
-    })
+
+      $('.chat-content-container').animate({ 
+        scrollTop: $('.chat-messages').height()
+      });
+
+    });
   });
 });
