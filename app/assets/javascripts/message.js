@@ -29,11 +29,17 @@ document.addEventListener('turbolinks:load', function() {
 
   }
 
+  let ajaxProcessingFlag;
   
   $('#new_message').on('submit', function(e) {
+    
+    ajaxProcessingFlag = true;
+
     e.preventDefault();
+    
     let formData = new FormData(this);
     let url = window.location.href
+    
     $.ajax({
       url: url,
       method: 'POST',
@@ -56,6 +62,9 @@ document.addEventListener('turbolinks:load', function() {
     })
     .fail(function() {
       alert('エラーが発生しました');
+    })
+    .always(function() {
+      ajaxProcessingFlag = false;
     })
   });
 });
