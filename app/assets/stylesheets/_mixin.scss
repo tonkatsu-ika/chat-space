@@ -1,13 +1,13 @@
 // ボタン用のmixin
 @mixin btn($font-color, $font-size, $height, $border-color, $background-color: #fff, $border-width:1px) {
 
-  height:               $height;
-  line-height:          $height;
+  height: $height;
+  line-height: $height;
 
-  border:               $border-width solid $border-color;
-  color:                $font-color;
-  font-size:            $font-size;
-  background-color:     $background-color;
+  border: $border-width solid $border-color;
+  color: $font-color;
+  font-size: $font-size;
+  background-color: $background-color;
 
 }
 

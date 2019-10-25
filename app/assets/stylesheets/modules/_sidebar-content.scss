@@ -1,34 +1,34 @@
 .sidebar-content-container {
-  position:             fixed;
-  bottom:               0;
-  width:                $sidebar-width;
-  height:               $sidebar-content-height;
-  margin-top:           $sidebar-header-height;
-  background-color:     #2f3e51;
+  position: fixed;
+  bottom: 0;
+  width: $sidebar-width;
+  height: $sidebar-content-height;
+  margin-top: $sidebar-header-height;
+  background-color: #2f3e51;
 
 
-  padding:            20px 20px 40px 20px;
+  padding: 20px 20px 40px 20px;
     
     a {
-      text-decoration:  none;
+      text-decoration: none;
     }
 
     .chat-group {
 
-      margin-bottom:    40px;
+      margin-bottom: 40px;
 
       &__group-name {
 
-        margin-bottom:  5px;
-        font-size:      15px;
-        color:          $cs-white;
+        margin-bottom: 5px;
+        font-size: 15px;
+        color: $cs-white;
 
       }
 
       &__latest-message {
 
-        font-size:      11px;
-        color:          $cs-white;
+        font-size: 11px;
+        color: $cs-white;
 
       }
     
