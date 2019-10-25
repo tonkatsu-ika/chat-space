@@ -1,5 +1,5 @@
 .chat-input-form-container
-  = form_for [@group, @message], url: "messages", html: {class: "chat-input-form-container__form"} do |f|
+  = form_for [@group, @message], url: "messages", remote: true, html: {class: "chat-input-form-container__form"} do |f|
     .input-form
       = f.text_field :content, class: "input-form__text", placeholder: "type a message"
       = f.label :image, class: "input-form__image" do
