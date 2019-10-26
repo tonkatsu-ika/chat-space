@@ -27,7 +27,7 @@ document.addEventListener('turbolinks:load', function() {
 
   $('#user-search-field').on('keyup', function() {
     let input = $(this).val();
-    
+
     $.ajax ({
       url: 'http://localhost:3000/users',
       method: 'GET',
@@ -60,11 +60,15 @@ document.addEventListener('turbolinks:load', function() {
 
   });
 
-  // data-user-id or data-user-nameを取得
 
-  $('').on('click', function() {
-
+  $(document).on('click', '.user-search-add', function() {
+    // data-user-idを取得する
+    console.log('triggered');
+    console.log(this);
     // 追加したユーザのHTMLを作る関数
+    $.fn.addHTMLToMemberList = function(user) {
+
+    };
 
     // ajax通信
     $.ajax ({
@@ -72,10 +76,10 @@ document.addEventListener('turbolinks:load', function() {
     })
     .done(function(user){
 
-      $('').addHTMLTtoMemberlist(user);
+      $('').addHTMLToMemberList(user);
 
     })
-    .fail(fucntion(){
+    .fail(function(){
       alert("ユーザーの追加に失敗しました");
     })
 
