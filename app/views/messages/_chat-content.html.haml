@@ -1,7 +1,7 @@
 .chat-content-container
   .chat-messages
     - @messages.each do |message|
-      .chat-message
+      .chat-message{ "data-message-id": "#{message.id}" }
         .chat-massage__upper-content
           %p.chat-message__upper-content__user-name
             = message.user.name
