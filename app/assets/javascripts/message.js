@@ -66,4 +66,24 @@ document.addEventListener('turbolinks:load', function() {
       ajaxProcessingFlag = false;
     })
   });
+
+
+  let reloadMessages = function() {
+
+    last_message_id = '' // to be added
+    $.ajax({
+      url: '', // to be added
+      type: 'get',
+      dataType: 'json',
+      data: { id: last_message_id }
+    })
+    .done(function() {
+      console.log('success');
+    })
+    .fail(function() {
+      console.log('error');
+    })
+
+  });
+
 });
