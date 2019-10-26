@@ -2,16 +2,26 @@ document.addEventListener('turbolinks:load', function() {
 
   $.fn.addHTMLWhenNoUser = function(){
     
-    var html = `<div>test</div>`;
+    var html = `
+                <div class="chat-group-user clearfix">
+                  <p class="chat-group-user__name">一致するユーザーが見つかりません</p>
+                </div>
+               `;
     
     this.append(html);
 
-    console.log('func no user called');
   }
 
   $.fn.addHTMLWhenWithUsers = function(user){
     
-    console.log('func with user called');
+    var html = `
+                <div class="chat-group-user clearfix">
+                  <p class="chat-group-user__name">${user.name}</p>
+                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${user.id} data-user-name=${user.name}>追加</a>
+                </div>
+               `;
+
+    this.append(html);
 
   }
 
@@ -26,21 +36,15 @@ document.addEventListener('turbolinks:load', function() {
       processData: false,
     })
     .done(function(users) {
-      // emptyメソッドで一度検索結果をからにする
-      console.log($('#user-search-field').val());
-
-      $('#user-search-field').empty();
       
-      console.log(`user # is ${users.length}`);
+      $('#user-search-result').empty();
 
       if (users.length === 0) {
-        console.log('no user');
-        // ユーザゼロの場合の処理
         
         $('#user-search-result').addHTMLWhenNoUser();
 
       } else {
-        // 各ユーザの処理
+
         users.forEach(function(user) {
 
           $('#user-search-result').addHTMLWhenWithUsers(user);
