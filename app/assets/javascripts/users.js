@@ -54,10 +54,8 @@ document.addEventListener('turbolinks:load', function() {
       }
 
     })
-    
-    
     .fail(function() {
-      console.log('fail');
+      alert("ユーザー検索に失敗しました");
     })
 
   });
