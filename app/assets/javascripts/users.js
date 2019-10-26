@@ -62,26 +62,26 @@ document.addEventListener('turbolinks:load', function() {
 
 
   $(document).on('click', '.user-search-add', function() {
-    // data-user-idを取得する
-    console.log('triggered');
-    console.log(this);
-    // 追加したユーザのHTMLを作る関数
-    $.fn.addHTMLToMemberList = function(user) {
+
+    let userId = $(this).attr('data-user-id');
+    let userName = $(this).attr('data-user-name');
+   
+    $.fn.addHTMLToMemberList = function(userId, userName) {
+
+      let html = `
+                  <div class="chat-group-user clearfix js-chat-member" id="chat-group-user-${userId}">
+                    <input name="group[${userId}][]" type="hidden" value=${userId}>
+                    <p class="chat-group-user__name">${userName}</p>
+                    <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn">削除</a>
+                  </div>
+                 `
+      $(this).append(html);
 
     };
 
-    // ajax通信
-    $.ajax ({
+    // 検索結果から削除
 
-    })
-    .done(function(user){
-
-      $('').addHTMLToMemberList(user);
-
-    })
-    .fail(function(){
-      alert("ユーザーの追加に失敗しました");
-    })
+    $('.js-add-user').addHTMLToMemberList(userId, userName);
 
   });
 
