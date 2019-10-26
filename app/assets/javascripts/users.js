@@ -70,7 +70,7 @@ document.addEventListener('turbolinks:load', function() {
 
       let html = `
                   <div class="chat-group-user clearfix js-chat-member" id="chat-group-user-${userId}">
-                    <input name="group[${userId}][]" type="hidden" value=${userId}>
+                    <input name="group[user_ids][]" type="hidden" value=${userId}>
                     <p class="chat-group-user__name">${userName}</p>
                     <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn">削除</a>
                   </div>
@@ -85,11 +85,13 @@ document.addEventListener('turbolinks:load', function() {
   });
 
   
-  $(document).on('click', '.user-search-remove', function() {
-
+  $(document).on('click', '.chat-group-user__remove', function() {
       $(this).parent().remove();
-
   });
 
+  $(document).on('click', '.js-remove-btn', function() {
+    console.log("remove triggered");
+    $(this).parent().remove();
+  });
 
 });
