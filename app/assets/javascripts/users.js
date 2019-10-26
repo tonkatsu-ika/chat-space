@@ -79,15 +79,17 @@ document.addEventListener('turbolinks:load', function() {
 
     };
 
-    // 検索結果から削除
-    $.fn.removeHTMLFromResult = function(userId) {
-
-    };
-
     $('.js-add-user').addHTMLToMemberList(userId, userName);
-
     $(this).parent().remove();
 
   });
+
+  
+  $(document).on('click', '.user-search-remove', function() {
+
+      $(this).parent().remove();
+
+  });
+
 
 });
