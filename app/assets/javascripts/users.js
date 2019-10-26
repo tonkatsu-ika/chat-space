@@ -60,4 +60,25 @@ document.addEventListener('turbolinks:load', function() {
 
   });
 
+  // data-user-id or data-user-nameを取得
+
+  $('').on('click', function() {
+
+    // 追加したユーザのHTMLを作る関数
+
+    // ajax通信
+    $.ajax ({
+
+    })
+    .done(function(user){
+
+      $('').addHTMLTtoMemberlist(user);
+
+    })
+    .fail(fucntion(){
+      alert("ユーザーの追加に失敗しました");
+    })
+
+  });
+
 });
