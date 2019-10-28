@@ -94,10 +94,8 @@ document.addEventListener('turbolinks:load', function() {
 
     let last_message_id = $('.chat-message:last-child').data('messageId');
 
-    console.log(`last_message_id: ${last_message_id}`);
-
     let groupPath = location.href.match('/[0-9]+')[0];
-    let url = `api/messages`;
+    let url = `api/messages?=${last_message_id}`;
 
     $.ajax({
       url: url,
@@ -106,12 +104,15 @@ document.addEventListener('turbolinks:load', function() {
       data: { id: last_message_id }
     })
     .done(function(messages) {
-      console.log(messages);
-      messages.forEach(function(message) {
-        let html = buildMessageHTML(message);      
-        $('.chat-messages').append(html);
-      });
-
+      if (messages !== undefined) {
+        messages.forEach(function(message) {
+          let html = buildMessageHTML(message);      
+          $('.chat-messages').append(html);
+        });
+        // スクロールアニメ
+      } else {
+        console.log('no new message'); 
+      }
     })
     .fail(function() {
       alert('自動更新に失敗しました');
