@@ -70,7 +70,7 @@ document.addEventListener('turbolinks:load', function() {
 
   let reloadMessages = function() {
 
-    last_message_id = '' // to be added
+    last_message_id = $('.chat-message:last-child').data('messageId');
     $.ajax({
       url: '', // to be added
       type: 'get',
@@ -84,6 +84,11 @@ document.addEventListener('turbolinks:load', function() {
       console.log('error');
     })
 
-  });
+  };
+
+  // to be deleted
+  let lastMsg = $('.chat-message:last-child').data('messageId');
+  console.log(lastMsg);
+  
 
 });
