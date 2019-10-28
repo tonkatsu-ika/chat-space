@@ -8,7 +8,7 @@ document.addEventListener('turbolinks:load', function() {
     let createdAtObj = new Date(data.created_at);
     let createdAtStr = `${createdAtObj.getFullYear()}/${createdAtObj.getMonth() + 1}/${createdAtObj.getDate()} ${createdAtObj.toLocaleTimeString()}`
 
-    let html = `<div class="chat-message">
+    let html = `<div class="chat-message" data-message-id=${data.id}>
                   <div class="chat-massage__upper-content">
                     <p class="chat-message__upper-content__user-name">
                       ${data.user_name}
@@ -26,28 +26,6 @@ document.addEventListener('turbolinks:load', function() {
     return html;
 
   }
-
-  
-  let buildMessageHTML = function(message) {
-
-    let imgTag = '';
-    message.image.url !== '' ? imgTag = `<img scr=${message.image.url}>` : imgTag = '';
-
-    let html = `
-                <div class="chat-message" "data-message-id"=${message.id}>
-                  <div class="chat-massage__upper-content">
-                    <p class="chat-message__upper-content__user-name">${message.user_name}</p>
-                    <p class="chat-message__upper-content__date">${message.created_at}</p>
-                  </div>
-                  <p class="chat-message__message">${message.content}</p>
-                  ${imgTag}
-                </div>
-               `
-
-    return html;
-
-  };
-
 
   let ajaxProcessingFlag;
   
@@ -92,37 +70,44 @@ document.addEventListener('turbolinks:load', function() {
 
   let reloadMessages = function() {
 
-    let last_message_id = $('.chat-message:last-child').data('messageId');
-
-    let groupPath = location.href.match('/[0-9]+')[0];
-    let url = `api/messages?=${last_message_id}`;
+    let last_message_id = $(document).find('.chat-message:last').data('message-id');
+    
+    console.log(`last_message_id: ${last_message_id}`);
 
     $.ajax({
-      url: url,
+      url: 'api/messages',
       type: 'get',
       dataType: 'json',
       data: { id: last_message_id }
     })
     .done(function(messages) {
-      if (messages !== undefined) {
+      console.log(`messages: ${messages.length}`);
+      if (messages.length !== 0) {
         messages.forEach(function(message) {
-          let html = buildMessageHTML(message);      
+          let html = '';
+          html = buildHTML(message);      
           $('.chat-messages').append(html);
         });
 
-        $('.chat-messages').animate({
-          scrollTop: $('.chat-messages').height
-        });
+        $('.chat-content-container').animate({
+          scrollTop: $('.chat-messages').height()
+        }, 100);
+
+        $('.chat-content-container').animate({
+          scrollTop: $('.chat-messages').height()
+        }, 400);
 
       } else {
         console.log('no new message'); 
       }
+
     })
     .fail(function() {
       alert('自動更新に失敗しました');
     })
 
   };
+
 
   let currentPath = location.pathname;
   let flagToTriggerReload = currentPath.match('groups/[0-9]+/messages') ? true : false ;
@@ -131,5 +116,6 @@ document.addEventListener('turbolinks:load', function() {
     setInterval(reloadMessages, 5000); 
 
   }; 
+
 
 });
