@@ -124,6 +124,12 @@ document.addEventListener('turbolinks:load', function() {
 
   };
 
-  // setInterval(reloadMessages, 5000); 
+  let currentPath = location.pathname;
+  let flagToTriggerReload = currentPath.match('groups/[0-9]+/messages') ? true : false ;
+  if (flagToTriggerReload) {
+
+    setInterval(reloadMessages, 5000); 
+
+  }; 
 
 });
