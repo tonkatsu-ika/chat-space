@@ -27,6 +27,28 @@ document.addEventListener('turbolinks:load', function() {
 
   }
 
+  
+  let buildMessageHTML = function(message) {
+
+    let imgTag = '';
+    message.image.url !== '' ? imgTag = `<img scr=${message.image.url}>` : imgTag = '';
+
+    let html = `
+                <div class="chat-message" "data-message-id"=${message.id}>
+                  <div class="chat-massage__upper-content">
+                    <p class="chat-message__upper-content__user-name">${message.user_name}</p>
+                    <p class="chat-message__upper-content__date">${message.created_at}</p>
+                  </div>
+                  <p class="chat-message__message">${message.content}</p>
+                  ${imgTag}
+                </div>
+               `
+
+    return html;
+
+  };
+
+
   let ajaxProcessingFlag;
   
   $('#new_message').on('submit', function(e) {
@@ -82,8 +104,11 @@ document.addEventListener('turbolinks:load', function() {
       dataType: 'json',
       data: { id: last_message_id }
     })
-    .done(function() {
-      console.log('success');
+    .done(function(messages) {
+      messages.forEach(function(message) {
+        let html = buildMessageHTML(message);      
+        $('.chat-messages').append(html);
+      });
     })
     .fail(function() {
       console.log('error');
@@ -93,7 +118,7 @@ document.addEventListener('turbolinks:load', function() {
 
   // to be deleted
   let fullPath = location.href;
-  let testArg = `/groups/${fullPath.match('/[0-9]+')[0]}/messages`;
+  let testArg = `/groups${fullPath.match('/[0-9]+')[0]}/messages`;
 
   
   console.log(testArg);
