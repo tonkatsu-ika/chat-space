@@ -1,4 +1,4 @@
-document.addEventListener('turbolinks:load', function() {
+$(document).on('turbolinks:load', function() {
 
   function buildHTML(data) {
 
@@ -28,8 +28,8 @@ document.addEventListener('turbolinks:load', function() {
   }
 
   let ajaxProcessingFlag;
-  
-  $('#new_message').on('submit', function(e) {
+  let jqxhr;
+  $('#new_message').on('submit turbolinks:load', function(e) {
     
     ajaxProcessingFlag = true;
 
@@ -37,8 +37,13 @@ document.addEventListener('turbolinks:load', function() {
     
     let formData = new FormData(this);
     let url = window.location.href
+
+    console.log(`jqxhr: ${jqxhr}`);
+    if (jqxhr) {
+      return;
+    }
     
-    $.ajax({
+    jqxhr = $.ajax({
       url: url,
       method: 'POST',
       data: formData,
@@ -47,9 +52,12 @@ document.addEventListener('turbolinks:load', function() {
       contentType: false
     })
     .done(function(data){
-      let html = buildHTML(data);
+      if (jqxhr) {
+     
+        let html = buildHTML(data);
+        $('.chat-messages').append(html);
 
-      $('.chat-messages').append(html);
+      }
 
       $('#new_message')[0].reset();
 
