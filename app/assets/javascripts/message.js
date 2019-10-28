@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(function() {
 
   function buildHTML(data) {
 
@@ -27,23 +27,12 @@ $(document).on('turbolinks:load', function() {
 
   }
 
-  let ajaxProcessingFlag;
-  let jqxhr;
-  $('#new_message').on('submit turbolinks:load', function(e) {
-    
-    ajaxProcessingFlag = true;
-
+  $('#new_message').on('submit', function(e) {
+    $('.chat-input-form-container__form--btn').attr('disabled');
     e.preventDefault();
-    
     let formData = new FormData(this);
     let url = window.location.href
-
-    console.log(`jqxhr: ${jqxhr}`);
-    if (jqxhr) {
-      return;
-    }
-    
-    jqxhr = $.ajax({
+    $.ajax({
       url: url,
       method: 'POST',
       data: formData,
@@ -52,26 +41,16 @@ $(document).on('turbolinks:load', function() {
       contentType: false
     })
     .done(function(data){
-      if (jqxhr) {
-     
-        let html = buildHTML(data);
-        $('.chat-messages').append(html);
-
-      }
-
+      let html = buildHTML(data);
+      $('.chat-messages').append(html);
       $('#new_message')[0].reset();
-
+      $('.chat-input-form-container__form--btn').removeAttr('disabled');
       $('.chat-content-container').animate({ 
         scrollTop: $('.chat-messages').height()
       }, 100);
-
-      $('.chat-input-form-container__form--btn').removeAttr('disabled');
     })
     .fail(function() {
       alert('エラーが発生しました');
-    })
-    .always(function() {
-      ajaxProcessingFlag = false;
     })
   });
 
@@ -89,7 +68,6 @@ $(document).on('turbolinks:load', function() {
       data: { id: last_message_id }
     })
     .done(function(messages) {
-      console.log(`messages: ${messages.length}`);
       if (messages.length !== 0) {
         messages.forEach(function(message) {
           let html = '';
@@ -100,10 +78,6 @@ $(document).on('turbolinks:load', function() {
         $('.chat-content-container').animate({
           scrollTop: $('.chat-messages').height()
         }, 100);
-
-        $('.chat-content-container').animate({
-          scrollTop: $('.chat-messages').height()
-        }, 400);
 
       } else {
         console.log('no new message'); 

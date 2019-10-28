@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to :json
     else
-      render :index
+      redirect_to root_path
     end
   end
 
