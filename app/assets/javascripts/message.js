@@ -94,9 +94,10 @@ document.addEventListener('turbolinks:load', function() {
 
     let last_message_id = $('.chat-message:last-child').data('messageId');
 
-    let groupPath = location.href.search('/[0-9]+');
-    let url = `groups${groupPath}/messages`;
-    console.log(url);
+    console.log(`last_message_id: ${last_message_id}`);
+
+    let groupPath = location.href.match('/[0-9]+')[0];
+    let url = `api/messages`;
 
     $.ajax({
       url: url,
@@ -105,6 +106,7 @@ document.addEventListener('turbolinks:load', function() {
       data: { id: last_message_id }
     })
     .done(function(messages) {
+      console.log(messages);
       messages.forEach(function(message) {
         let html = buildMessageHTML(message);      
         $('.chat-messages').append(html);
