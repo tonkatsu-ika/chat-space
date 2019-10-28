@@ -70,9 +70,14 @@ document.addEventListener('turbolinks:load', function() {
 
   let reloadMessages = function() {
 
-    last_message_id = $('.chat-message:last-child').data('messageId');
+    let last_message_id = $('.chat-message:last-child').data('messageId');
+
+    let groupPath = location.href.search('/[0-9]+');
+    let url = `groups${groupPath}/messages`;
+    console.log(url);
+
     $.ajax({
-      url: '', // to be added
+      url: url,
       type: 'get',
       dataType: 'json',
       data: { id: last_message_id }
@@ -87,8 +92,11 @@ document.addEventListener('turbolinks:load', function() {
   };
 
   // to be deleted
-  let lastMsg = $('.chat-message:last-child').data('messageId');
-  console.log(lastMsg);
+  let fullPath = location.href;
+  let testArg = `/groups/${fullPath.match('/[0-9]+')[0]}/messages`;
+
+  
+  console.log(testArg);
   
 
 });
