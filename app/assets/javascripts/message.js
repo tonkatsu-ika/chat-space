@@ -109,19 +109,14 @@ document.addEventListener('turbolinks:load', function() {
         let html = buildMessageHTML(message);      
         $('.chat-messages').append(html);
       });
+
     })
     .fail(function() {
-      console.log('error');
+      alert('自動更新に失敗しました');
     })
 
   };
 
-  // to be deleted
-  let fullPath = location.href;
-  let testArg = `/groups${fullPath.match('/[0-9]+')[0]}/messages`;
-
-  
-  console.log(testArg);
-  
+  setInterval(reloadMessages, 5000); 
 
 });
