@@ -109,7 +109,11 @@ document.addEventListener('turbolinks:load', function() {
           let html = buildMessageHTML(message);      
           $('.chat-messages').append(html);
         });
-        // スクロールアニメ
+
+        $('.chat-messages').animate({
+          scrollTop: $('.chat-messages').height
+        });
+
       } else {
         console.log('no new message'); 
       }
@@ -120,6 +124,6 @@ document.addEventListener('turbolinks:load', function() {
 
   };
 
-  setInterval(reloadMessages, 5000); 
+  // setInterval(reloadMessages, 5000); 
 
 });
