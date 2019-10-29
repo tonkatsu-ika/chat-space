@@ -14,7 +14,6 @@ describe MessagesController do
 
 
       it 'assings @message' do
-        binding.pry
         expect(assigns(:message)).to be_a_new(Message)
       end
 
