@@ -90,7 +90,6 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '.js-remove-btn', function() {
-    console.log("remove triggered");
     $(this).parent().remove();
   });
 

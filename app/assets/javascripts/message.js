@@ -59,8 +59,6 @@ $(function() {
 
     let last_message_id = $(document).find('.chat-message:last').data('message-id');
     
-    console.log(`last_message_id: ${last_message_id}`);
-
     $.ajax({
       url: 'api/messages',
       type: 'get',
@@ -79,9 +77,7 @@ $(function() {
           scrollTop: $('.chat-messages').height()
         }, 100);
 
-      } else {
-        console.log('no new message'); 
-      }
+      } 
 
     })
     .fail(function() {
