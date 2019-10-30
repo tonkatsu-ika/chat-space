@@ -29,7 +29,7 @@ $(document).ready(function() {
     let input = $(this).val();
 
     $.ajax ({
-      url: 'http://localhost:3000/users',
+      url: '/users',
       method: 'GET',
       data: input,
       dataType: 'json',
