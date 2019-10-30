@@ -1,22 +1,22 @@
-app_path = File.expand_path('../../', __FILE__)
+app_path = File.expand_path('../../../', __FILE__)
 
 worker_processes 1
 
 # setting application directory
-working_directory app_path
+working_directory "#{app_path}/current"
 
-pid "#{app_path}/tmp/pids/unicorn.pid"
+pid "#{app_path}/shared/tmp/pids/unicorn.pid"
 
 # port
 listen 3000
 
-listen "#{app_path}/tmp/sockets/unicorn.sock"
+listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
 
 # error log
-stderr_path "#{app_path}/log/unicorn.stderr.log"
+stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
 
 # normal log
-stdout_path "#{app_path}/log/unicorn.stdout.log"
+stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
 
 # maximum time to waif for response
 timeout 60
