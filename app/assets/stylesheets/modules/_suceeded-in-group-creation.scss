@@ -1,26 +1,14 @@
 .suceeded-in-group-creation-container {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  height: $suceeded-in-group-creation-height;
 
-  background-color: $cs-light-blue;
-  color: $cs-white;
-  font-size: 16px;
-  text-align: center;
-
-  .flash {
-    
+  .notice {
     color: $cs-white;
     text-align: center;
-
-    &__notice {
-      background-color: $cs-light-blue;
-    }
-    &__alert {
-      background-color: $cs-alert-orange;
-    }
-
+    background-color: $cs-light-blue;
   }
+  .alert {
+    color: $cs-white;
+    text-align: center;
+    background-color: $cs-alert-orange;
+  }
+  
 }
