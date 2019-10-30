@@ -53,7 +53,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'haml-rails'
 end
 
 group :production do
@@ -69,3 +68,5 @@ gem 'devise'
 gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
+
+gem 'haml-rails'
