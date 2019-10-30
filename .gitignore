@@ -22,3 +22,5 @@ public/uploads/*
 user-materials/*
 
 uploads/*
+
+config/secrets.yml
