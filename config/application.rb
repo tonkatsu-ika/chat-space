@@ -21,6 +21,7 @@ module ChatSpace
 
     # デフォルトのロケールを:jaにする
     config.i18n.default_locale = :ja
+    
 
 
   end
