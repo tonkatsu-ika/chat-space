@@ -84,12 +84,8 @@ $(document).ready(function() {
 
   });
 
-  
-  $(document).on('click', '.chat-group-user__remove', function() {
-      $(this).parent().remove();
-  });
-
-  $(document).on('click', '.js-remove-btn', function() {
+  $(document).on('click', '.js-remove-btn', function(e) {
+    e.preventDefault();
     $(this).parent().remove();
   });
 
